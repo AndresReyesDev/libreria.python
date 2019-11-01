@@ -19,22 +19,25 @@
     <div class="row">
         <div class="col-lg-3 order-2 order-lg-1">
             <div class="list-group">
-                <a href="{% url 'catalog:books_list' %}" class="list-group-item list-group-item-action active">Libros</a>
+                <a href="{% url 'catalog:books_list' %}"
+                   class="list-group-item list-group-item-action active">Libros</a>
                 <a href="{% url 'catalog:genres_list' %}" class="list-group-item list-group-item-action">Géneros</a>
                 <a href="{% url 'catalog:languages_list' %}" class="list-group-item list-group-item-action">Idiomas</a>
                 <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action">Autores</a>
-                <a href="{% url 'catalog:reservations_list' %}" class="list-group-item list-group-item-action">Reservas</a>
+                <a href="{% url 'catalog:reservations_list' %}"
+                   class="list-group-item list-group-item-action">Reservas</a>
             </div>
         </div>
         <div class="col-lg-9 order-1 order-lg-2">
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-block btn-outline-success float-right text-uppercase mb-3">Enviar Nuevo Libro <i
-                        class="fad fa-chevron-square-right"></i></button>
-                <br>
-                <hr />
-                <a href="{% url 'catalog:books_list' %}" class="btn btn-block btn-sm btn-danger">Volver</a>
+                <div class="alert alert-primary text-center" role="alert">
+                    <h4 class="alert-heading">¿Está seguro que desea eliminar <strong>{{ book.title }}</strong>?</h4>
+                    <p>Importante: esta acción no se puede deshacer</p>
+                    <hr>
+                    <button type="submit" class="btn btn-block btn-danger">Si, eliminar definitivamente</button>
+                    <a href="{% url 'catalog:books_list' %}" class="btn btn-block btn-outline-success btn-sm">Volver al Listado</a>
+                </div>
             </form>
         </div>
     </div>

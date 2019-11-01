@@ -16,11 +16,14 @@ class Author(models.Model):
         return reverse('author-detail', args=[str(self.id)])
 
     def __str__(self):
-        return self.first_name
+        return '%s %s' % (self.first_name, self.last_name)
 
 
 class Genre(models.Model):
     name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
 
 
 class Language(models.Model):
@@ -36,8 +39,8 @@ class Book(models.Model):
     summary = models.TextField(max_length=1000)
     imprint = models.CharField(max_length=100)
     isbn = models.CharField(max_length=13)
-    genre = models.ManyToManyField(Genre)
-    language = models.ManyToManyField(Language)
+    genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
+    language = models.ForeignKey(Language, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title

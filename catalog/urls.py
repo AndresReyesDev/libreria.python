@@ -1,16 +1,29 @@
 from django.urls import path
-from .views import books_list, languages_list, genres_list, authors_list, reservations_list
-from .views import books_create
-from . import views
+from django.conf.urls import url
+# Books
+from .views import BookList, BookCreate , BookDetail, BookDelete, BookUpdate
+# Languages
+from .views import LanguageList
+# Genres
+from .views import GenreList
+# Authors
+from .views import AuthorList
+# Reservations
+from .views import ReservationList
 
 urlpatterns = [
-    # List Models
-    path('', books_list, name='books_list'),
-    path('languages', languages_list, name='languages_list'),
-    path('genres', genres_list, name='genres_list'),
-    path('authors', authors_list, name='authors_list'),
-    path('reservations', reservations_list, name='reservations_list'),
-
-    # Create Model
-    path('books/new', books_create, name='books_create'),
+    # Books
+    url(r'^$', BookList.as_view(), name='books_list'),
+    url(r'^books/new/$', BookCreate.as_view(), name='books_create'),
+    url(r'^books/detail/(?P<pk>\d+)/$', BookDetail.as_view(), name='books_detail'),
+    url(r'^books/update/(?P<pk>\d+)/$', BookUpdate.as_view(), name='books_update'),
+    url(r'^books/delete/(?P<pk>\d+)/$', BookDelete.as_view(), name='books_delete'),
+    # Languages
+    url(r'^languages', LanguageList.as_view(), name='languages_list'),
+    # Genres
+    url(r'^genres', GenreList.as_view(), name='genres_list'),
+    # Authors
+    url(r'^authors', AuthorList.as_view(), name='authors_list'),
+    # Reservations
+    url(r'^reservations', ReservationList.as_view(), name='reservations_list'),
 ]

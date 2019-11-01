@@ -1,40 +1,60 @@
 from django.shortcuts import render, redirect
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from .models import Book, Genre, Language, Author, BookInstance
+from django.urls import reverse_lazy
 from .forms import BookForm
 
 
-# List views.
-def books_list(request):
-    books = Book.objects.all()
-    return render(request, 'books/books.html', {'books': books})
+# Books
+class BookList(ListView):
+    queryset = Book.objects.order_by('id')
+    template_name = 'books/books_list.html'
 
 
-def languages_list(request):
-    languages = Language.objects.all()
-    return render(request, 'languages/languages.html', {'languages': languages})
+class BookDetail(DetailView):
+    model = Book
+    template_name = 'books/books_detail.html'
 
 
-def genres_list(request):
-    genres = Genre.objects.all()
-    return render(request, 'genres/genres.html', {'genres': genres})
+class BookCreate(CreateView):
+    model = Book
+    form_class = BookForm
+    template_name = 'books/books_form.html'
+    success_url = reverse_lazy('catalog:books_list')
 
 
-def authors_list(request):
-    authors = Author.objects.all()
-    return render(request, 'authors/authors.html', {'authors': authors})
+class BookDelete(DeleteView):
+    model = Book
+    template_name = 'books/books_delete.html'
+    success_url = reverse_lazy('catalog:books_list')
 
 
-def reservations_list(request):
-    reservations = BookInstance.objects.all()
-    return render(request, 'reservations/reservations.html', {'reservations': reservations})
+class BookUpdate(UpdateView):
+    model = Book
+    form_class = BookForm
+    template_name = 'books/books_form.html'
+    success_url = reverse_lazy('catalog:books_list')
 
 
-# Create views
-def books_create(request):
-    if request.POST:
-        return render(request, 'books/books_view.html', {'authors': authors, 'languages': languages, 'genres': genres})
-    else:
-        authors = Author.objects.all()
-        languages = Language.objects.all()
-        genres = Genre.objects.all()
-        return render(request, 'books/books_form.html', {'authors': authors, 'languages': languages, 'genres': genres})
+# Languages
+class LanguageList(ListView):
+    queryset = Language.objects.order_by('id')
+    template_name = 'languages/languages_list.html'
+
+
+# Genres
+class GenreList(ListView):
+    queryset = Genre.objects.order_by('id')
+    template_name = 'genres/genres_list.html'
+
+
+# Authors
+class AuthorList(ListView):
+    queryset = Author.objects.order_by('id')
+    template_name = 'authors/authors_list.html'
+
+
+# Reservations
+class ReservationList(ListView):
+    queryset = BookInstance.objects.order_by('id')
+    template_name = 'reservations/reservations_list.html'
