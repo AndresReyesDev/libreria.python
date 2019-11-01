@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css"/>
+    <title>Libros — Catálogo Django</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col pt-5">
+            <h3>Catálogo de Libros</h3>
+        </div>
+    </div>
+    <hr class="pb-3"/>
+    <div class="row">
+        <div class="col-lg-3 order-2 order-lg-1">
+            <div class="list-group">
+                <a href="/" class="list-group-item list-group-item-action active">Libros</a>
+                <a href="/genres" class="list-group-item list-group-item-action">Géneros</a>
+                <a href="/languages" class="list-group-item list-group-item-action">Idiomas</a>
+                <a href="/authors" class="list-group-item list-group-item-action">Autores</a>
+                <a href="/reservations" class="list-group-item list-group-item-action">Reservas</a>
+            </div>
+        </div>
+        <div class="col-lg-9 order-1 order-lg-2">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Lenguaje</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for book in books %}
+                <tr>
+                    <th scope="row">{{ book.id }}</th>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author.first_name }} {{ book.author.last_name }}</td>
+                    <td>{{ book.language.name }}</td>
+                    <td>{{ book.genre.name }}</td>
+                    <td><a href="" class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i class="fad fa-chevron-square-right"></i></a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        <a href="{% url 'books_create' %}" class="btn btn-sm btn-outline-info float-right text-uppercase mb-3">Agregar Libro <i class="fad fa-chevron-square-right"></i></a>
+        </div>
+    </div>
+    <hr />
+    &copy; 2019 Ningún derecho reservado, Los Pobres Diablos SpA.<br><small>Andrés Reyes, Carlos Lizana y Daniel Bustamante</small>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script defer src="https://fa.sitiowebonline.cl/js/all.js"></script>
+</body>
+</html>
