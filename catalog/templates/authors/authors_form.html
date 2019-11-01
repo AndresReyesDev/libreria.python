@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css"/>
-    <title>Libros — Catálogo Django</title>
+    <title>Autores — Catálogo Django</title>
 </head>
 <body>
 <div class="container">
@@ -19,10 +19,10 @@
     <div class="row">
         <div class="col-lg-3 order-2 order-lg-1">
             <div class="list-group">
-                <a href="{% url 'catalog:books_list' %}" class="list-group-item list-group-item-action active">Libros</a>
+                <a href="{% url 'catalog:books_list' %}" class="list-group-item list-group-item-action ">Libros</a>
                 <a href="{% url 'catalog:genres_list' %}" class="list-group-item list-group-item-action">Géneros</a>
                 <a href="{% url 'catalog:languages_list' %}" class="list-group-item list-group-item-action">Idiomas</a>
-                <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action">Autores</a>
+                <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action active">Autores</a>
                 <a href="{% url 'catalog:reservations_list' %}" class="list-group-item list-group-item-action">Reservas</a>
             </div>
         </div>
@@ -34,7 +34,7 @@
                         class="fad fa-chevron-square-right"></i></button>
                 <br>
                 <hr />
-                <a href="{% url 'catalog:books_list' %}" class="btn btn-block btn-sm btn-danger">Volver</a>
+                <a href="{% url 'catalog:authors_list' %}" class="btn btn-block btn-sm btn-danger">Volver</a>
             </form>
         </div>
     </div>

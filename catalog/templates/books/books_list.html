@@ -19,13 +19,11 @@
     <div class="row">
         <div class="col-lg-3 order-2 order-lg-1">
             <div class="list-group">
-                <a href="{% url 'catalog:books_list' %}"
-                   class="list-group-item list-group-item-action active">Libros</a>
+                <a href="{% url 'catalog:books_list' %}" class="list-group-item list-group-item-action active">Libros</a>
                 <a href="{% url 'catalog:genres_list' %}" class="list-group-item list-group-item-action">Géneros</a>
                 <a href="{% url 'catalog:languages_list' %}" class="list-group-item list-group-item-action">Idiomas</a>
                 <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action">Autores</a>
-                <a href="{% url 'catalog:reservations_list' %}"
-                   class="list-group-item list-group-item-action">Reservas</a>
+                <a href="{% url 'catalog:reservations_list' %}" class="list-group-item list-group-item-action">Reservas</a>
             </div>
         </div>
         <div class="col-lg-9 order-1 order-lg-2">
@@ -51,14 +49,10 @@
                             <td>{{ book.genre.name }}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="{% url 'catalog:books_detail' book.id %}"
-                                       class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i
-                                            class="fad fa-chevron-square-right"></i></a>
-                                    <a href="{% url 'catalog:books_update' book.id %}"
-                                       class="btn btn-sm btn-outline-info float-right text-uppercase">Editar <i
-                                            class="fad fa-chevron-square-right"></i></a>
-                                <a href="{% url 'catalog:books_delete' book.id %}" class="btn btn-sm btn-outline-danger float-right text-uppercase">Eliminar
-                                        <i class="fad fa-chevron-square-right"></i></a></div>
+                                    <a href="{% url 'catalog:books_detail' book.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i class="fad fa-chevron-square-right"></i></a>
+                                    <a href="{% url 'catalog:books_update' book.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Editar <i class="fad fa-chevron-square-right"></i></a>
+                                    <a href="{% url 'catalog:books_delete' book.id %}" class="btn btn-sm btn-outline-danger float-right text-uppercase">Eliminar <i class="fad fa-chevron-square-right"></i></a>
+                                </div>
                             </td>
                         </tr>
                     {% endfor %}

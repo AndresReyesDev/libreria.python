@@ -19,11 +19,11 @@
     <div class="row">
         <div class="col-lg-3 order-2 order-lg-1">
             <div class="list-group">
-                <a href="/" class="list-group-item list-group-item-action">Libros</a>
-                <a href="/genres" class="list-group-item list-group-item-action">Géneros</a>
-                <a href="/languages" class="list-group-item list-group-item-action">Idiomas</a>
-                <a href="/authors" class="list-group-item list-group-item-action active">Autores</a>
-                <a href="/reservations" class="list-group-item list-group-item-action">Reservas</a>
+                <a href="{% url 'catalog:books_list' %}" class="list-group-item list-group-item-action">Libros</a>
+                <a href="{% url 'catalog:genres_list' %}" class="list-group-item list-group-item-action">Géneros</a>
+                <a href="{% url 'catalog:languages_list' %}" class="list-group-item list-group-item-action">Idiomas</a>
+                <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action active">Autores</a>
+                <a href="{% url 'catalog:reservations_list' %}" class="list-group-item list-group-item-action">Reservas</a>
             </div>
         </div>
         <div class="col-lg-9 order-1 order-lg-2">
@@ -41,20 +41,25 @@
                         <tr>
                             <th scope="row">{{ author.id }}</th>
                             <td>{{ author.first_name }} {{ author.last_name }}</td>
-                            <td><a href="" class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i
-                                    class="fad fa-chevron-square-right"></i></a></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{% url 'catalog:authors_detail' author.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i class="fad fa-chevron-square-right"></i></a>
+                                    <a href="{% url 'catalog:authors_update' author.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Editar <i class="fad fa-chevron-square-right"></i></a>
+                                    <a href="{% url 'catalog:authors_delete' author.id %}" class="btn btn-sm btn-outline-danger float-right text-uppercase">Eliminar <i class="fad fa-chevron-square-right"></i></a>
+                                </div>
+                            </td>
                         </tr>
                     {% endfor %}
                 {% else %}
                     <tr>
                         <td colspan="3">
-                            No hay Libros Registrados
+                            No hay Autores Registrados
                         </td>
                     </tr>
                 {% endif %}
                 </tbody>
             </table>
-            <a href="" class="btn btn-sm btn-outline-info float-right mb-3 text-uppercase">Agregar Autor <i
+            <a href="{% url 'catalog:authors_create' %}" class="btn btn-sm btn-outline-info float-right mb-3 text-uppercase">Agregar Autor <i
                     class="fad fa-chevron-square-right"></i></a>
         </div>
     </div>

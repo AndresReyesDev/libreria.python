@@ -51,4 +51,23 @@ class GenreForm(forms.ModelForm):
 class AuthorForm(forms.ModelForm):
     class Meta:
         model = Author
-        fields = ['first_name', 'last_name']
+        fields = [
+            'first_name',
+            'last_name',
+            'date_of_birth',
+            'date_of_death'
+        ]
+
+        labels = {
+            'first_name': 'Nombre',
+            'last_name': 'Apellido',
+            'date_of_birth': 'Fecha de Nacimiento',
+            'date_of_death': 'Fecha de Muerte',
+        }
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'date_of_birth': forms.DateInput(format='%d-%m-%Y', attrs={'class': 'form-control', 'type': 'date'}),
+            'date_of_death': forms.DateInput(format='%d-%m-%Y', attrs={'class': 'form-control', 'type': 'date'})
+        }
