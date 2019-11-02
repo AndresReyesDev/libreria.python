@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css"/>
+    <title>Géneros — Catálogo Django</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col pt-5">
+            <h3>Catálogo de Libros</h3>
+        </div>
+    </div>
+    <hr class="pb-3"/>
+    <div class="row">
+        <div class="col-lg-3 order-2 order-lg-1">
+            <div class="list-group">
+                <a href="{% url 'catalog:books_list' %}" class="list-group-item list-group-item-action ">Libros</a>
+                <a href="{% url 'catalog:genres_list' %}" class="list-group-item list-group-item-action active">Géneros</a>
+                <a href="{% url 'catalog:languages_list' %}" class="list-group-item list-group-item-action">Idiomas</a>
+                <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action ">Autores</a>
+                <a href="{% url 'catalog:reservations_list' %}"
+                   class="list-group-item list-group-item-action">Reservas</a>
+            </div>
+        </div>
+        <div class="col-lg-9 order-1 order-lg-2">
+            <h5 class="font-weight-light">#{{ genre.id }} — {{ genre.name }}</h5>
+            <hr />
+            <ul class="list-group pb-4">
+                <li class="list-group-item"><strong>Género:</strong> {{ genre.name }}</li>
+            </ul>
+            <div class="btn-group" role="group">
+                <a href="{% url 'catalog:genres_update' genre.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Editar <i class="fad fa-chevron-square-right"></i></a>
+                <a href="{% url 'catalog:genres_delete' genre.id %}" class="btn btn-sm btn-outline-danger float-right text-uppercase">Eliminar <i class="fad fa-chevron-square-right"></i></a>
+                <a href="{% url 'catalog:genres_list' %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Volver a la Lista <i class="fad fa-chevron-square-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    &copy; 2019 Ningún derecho reservado, Los Pobres Diablos SpA.<br><small>Andrés Reyes, Carlos Lizana y Daniel
+    Bustamante</small>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script defer src="https://fa.sitiowebonline.cl/js/all.js"></script>
+</body>
+</html>

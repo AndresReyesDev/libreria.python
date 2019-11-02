@@ -47,6 +47,10 @@ class GenreForm(forms.ModelForm):
         model = Genre
         fields = ['name']
 
+        labels = {'name': 'Género'}
+
+        widgets = {'name': forms.TextInput(attrs={'class': 'form-control'})}
+
 
 class AuthorForm(forms.ModelForm):
     class Meta:

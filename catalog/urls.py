@@ -5,7 +5,7 @@ from .views import BookList, BookCreate, BookDetail, BookDelete, BookUpdate
 # Languages
 from .views import LanguageList
 # Genres
-from .views import GenreList
+from .views import GenreList, GenreCreate, GenreDetail, GenreDelete, GenreUpdate
 # Authors
 from .views import AuthorList, AuthorCreate, AuthorDetail, AuthorDelete, AuthorUpdate
 # Reservations
@@ -24,7 +24,11 @@ urlpatterns = [
     url(r'^languages', LanguageList.as_view(), name='languages_list'),
 
     # Genres
-    url(r'^genres', GenreList.as_view(), name='genres_list'),
+    url(r'^genres$', GenreList.as_view(), name='genres_list'),
+    url(r'^genres/new/$', GenreCreate.as_view(), name='genres_create'),
+    url(r'^genres/detail/(?P<pk>\d+)/$', GenreDetail.as_view(), name='genres_detail'),
+    url(r'^genres/update/(?P<pk>\d+)/$', GenreUpdate.as_view(), name='genres_update'),
+    url(r'^genres/delete/(?P<pk>\d+)/$', GenreDelete.as_view(), name='genres_delete'),
 
     # Authors
     url(r'^authors$', AuthorList.as_view(), name='authors_list'),
