@@ -1,4 +1,3 @@
-from django.urls import path
 from django.conf.urls import url
 # Books
 from .views import BookList, BookCreate, BookDetail, BookDelete, BookUpdate
@@ -9,7 +8,7 @@ from .views import GenreList, GenreCreate, GenreDetail, GenreDelete, GenreUpdate
 # Authors
 from .views import AuthorList, AuthorCreate, AuthorDetail, AuthorDelete, AuthorUpdate
 # Reservations
-from .views import ReservationList
+from .views import ReservationList, ReservationCreate, ReservationDetail, ReservationDelete, ReservationUpdate
 
 urlpatterns = [
 
@@ -42,5 +41,9 @@ urlpatterns = [
     url(r'^authors/delete/(?P<pk>\d+)/$', AuthorDelete.as_view(), name='authors_delete'),
 
     # Reservations
-    url(r'^reservations', ReservationList.as_view(), name='reservations_list'),
+    url(r'^reservations$', ReservationList.as_view(), name='reservations_list'),
+    url(r'^reservations/new/$', ReservationCreate.as_view(), name='reservations_create'),
+    url(r'^reservations/detail/(?P<uuid>[0-9a-f-]+)/$', ReservationDetail.as_view(), name='reservations_detail'),
+    url(r'^reservations/update/(?P<uuid>[0-9a-f-]+)/$', ReservationUpdate.as_view(), name='reservations_update'),
+    url(r'^reservations/delete/(?P<uuid>[0-9a-f-]+)/$', ReservationDelete.as_view(), name='reservations_delete'),
 ]

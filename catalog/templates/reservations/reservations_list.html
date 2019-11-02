@@ -32,7 +32,6 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Libro</th>
-                    <th scope="col">Imprenta</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Devolución</th>
                     <th scope="col">Acción</th>
@@ -44,23 +43,27 @@
                         <tr>
                             <th scope="row">{{ forloop.counter }} </th>
                             <td>{{ reservation.book.title }}</td>
-                            <td>{{ reservation.imprint }}</td>
                             <td>{{ reservation.status }}</td>
                             <td>{{ reservation.due_back }}</td>
-                            <td><a href="" class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i
-                                    class="fad fa-chevron-square-right"></i></a></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{% url 'catalog:reservations_detail' reservation.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Ver <i class="fad fa-chevron-square-right"></i></a>
+                                    <a href="{% url 'catalog:reservations_update' reservation.id %}" class="btn btn-sm btn-outline-info float-right text-uppercase">Editar <i class="fad fa-chevron-square-right"></i></a>
+                                    <a href="{% url 'catalog:reservations_delete' reservation.id %}" class="btn btn-sm btn-outline-danger float-right text-uppercase">Eliminar <i class="fad fa-chevron-square-right"></i></a>
+                                </div>
+                            </td>
                         </tr>
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td colspan="6">
-                            No hay Libros Registrados
+                        <td colspan="5">
+                            No hay Reservas Registradas
                         </td>
                     </tr>
                 {% endif %}
                 </tbody>
             </table>
-            <a href="" class="btn btn-sm btn-outline-info float-right text-uppercase mb-3">Agregar Reserva <i
+            <a href="{% url 'catalog:reservations_create' %}" class="btn btn-sm btn-outline-info float-right text-uppercase mb-3">Agregar Reserva <i
                     class="fad fa-chevron-square-right"></i></a>
         </div>
     </div>

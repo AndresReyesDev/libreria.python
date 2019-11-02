@@ -1,5 +1,5 @@
 from django import forms
-from .models import Book, Language, Genre, Author
+from .models import Book, Language, Genre, Author, BookInstance
 
 
 class BookForm(forms.ModelForm):
@@ -78,4 +78,27 @@ class AuthorForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'date_of_birth': forms.DateInput(format='%d-%m-%Y', attrs={'class': 'form-control', 'type': 'date'}),
             'date_of_death': forms.DateInput(format='%d-%m-%Y', attrs={'class': 'form-control', 'type': 'date'})
+        }
+
+
+class ReservationForm(forms.ModelForm):
+    class Meta:
+        model = BookInstance
+
+        fields = [
+            'book',
+            'due_back',
+            'status'
+        ]
+
+        labels = {
+            'book': 'Libro',
+            'due_back': 'Fecha de Devolución',
+            'status': 'Estado'
+        }
+
+        widgets = {
+            'book': forms.Select(attrs={'class': 'form-control'}),
+            'due_back': forms.DateInput(format='%d-%m-%Y', attrs={'class': 'form-control', 'type': 'date'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
         }
