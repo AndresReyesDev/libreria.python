@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from .models import Book, Genre, Language, Author, BookInstance
 from django.urls import reverse_lazy
-from .forms import BookForm, AuthorForm, GenreForm
+from .forms import BookForm, AuthorForm, GenreForm, LanguageForm
 
 
 # Books
@@ -40,6 +40,30 @@ class BookUpdate(UpdateView):
 class LanguageList(ListView):
     queryset = Language.objects.order_by('id')
     template_name = 'languages/languages_list.html'
+
+class LanguageDetail(DetailView):
+    model = Language
+    template_name = 'languages/languages_detail.html'
+
+
+class LanguageCreate(CreateView):
+    model = Language
+    form_class = LanguageForm
+    template_name = 'languages/languages_form.html'
+    success_url = reverse_lazy('catalog:languages_list')
+
+
+class LanguageDelete(DeleteView):
+    model = Language
+    template_name = 'languages/languages_delete.html'
+    success_url = reverse_lazy('catalog:languages_list')
+
+
+class LanguageUpdate(UpdateView):
+    model = Language
+    form_class = LanguageForm
+    template_name = 'languages/languages_form.html'
+    success_url = reverse_lazy('catalog:languages_list')
 
 
 # Genres

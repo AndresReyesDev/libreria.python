@@ -41,6 +41,10 @@ class LanguageForm(forms.ModelForm):
         model = Language
         fields = ['name']
 
+        labels = {'name': 'Idioma'}
+
+        widgets = {'name': forms.TextInput(attrs={'class': 'form-control'})}
+
 
 class GenreForm(forms.ModelForm):
     class Meta:

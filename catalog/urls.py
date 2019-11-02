@@ -3,7 +3,7 @@ from django.conf.urls import url
 # Books
 from .views import BookList, BookCreate, BookDetail, BookDelete, BookUpdate
 # Languages
-from .views import LanguageList
+from .views import LanguageList, LanguageCreate, LanguageDetail, LanguageDelete, LanguageUpdate
 # Genres
 from .views import GenreList, GenreCreate, GenreDetail, GenreDelete, GenreUpdate
 # Authors
@@ -21,7 +21,11 @@ urlpatterns = [
     url(r'^books/delete/(?P<pk>\d+)/$', BookDelete.as_view(), name='books_delete'),
 
     # Languages
-    url(r'^languages', LanguageList.as_view(), name='languages_list'),
+    url(r'^languages$', LanguageList.as_view(), name='languages_list'),
+    url(r'^languages/new/$', LanguageCreate.as_view(), name='languages_create'),
+    url(r'^languages/detail/(?P<pk>\d+)/$', LanguageDetail.as_view(), name='languages_detail'),
+    url(r'^languages/update/(?P<pk>\d+)/$', LanguageUpdate.as_view(), name='languages_update'),
+    url(r'^languages/delete/(?P<pk>\d+)/$', LanguageDelete.as_view(), name='languages_delete'),
 
     # Genres
     url(r'^genres$', GenreList.as_view(), name='genres_list'),
