@@ -2,42 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab796d7-1612-4f9b-b2e2-2c45dbe4347c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/catalog/templates/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c27e117c-763d-4e88-98de-f24f37776675.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c27e117c-763d-4e88-98de-f24f37776675.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/authors/authors_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/authors/authors_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/authors/authors_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/authors/authors_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/authors/authors_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/authors/authors_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/templates/authors/authors_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/authors/authors_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/books/books_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/books/books_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/books/books_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/books/books_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/books/books_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/books/books_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/books/books_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/books/books_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/genres/genres_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/genres/genres_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/genres/genres_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/genres/genres_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/genres/genres_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/genres/genres_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/genres/genres_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/genres/genres_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/languages/languages_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/languages/languages_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/languages/languages_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/languages/languages_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/languages/languages_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/languages/languages_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/languages/languages_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/languages/languages_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/reservations/reservations_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/reservations/reservations_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/reservations/reservations_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/reservations/reservations_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/reservations/reservations_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/reservations/reservations_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/reservations/reservations_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/reservations/reservations_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libreria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/libreria/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libreria/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/libreria/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +149,7 @@
       <workItem from="1574018079715" duration="494000" />
       <workItem from="1575671717156" duration="23000" />
       <workItem from="1575671750343" duration="100000" />
-      <workItem from="1575672169715" duration="3620000" />
+      <workItem from="1575672169715" duration="4193000" />
     </task>
     <servers />
   </component>

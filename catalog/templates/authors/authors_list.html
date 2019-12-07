@@ -25,8 +25,7 @@
                 <a href="{% url 'catalog:authors_list' %}" class="list-group-item list-group-item-action active">Autores</a>
                 <a href="{% url 'catalog:reservations_list' %}" class="list-group-item list-group-item-action">Reservas</a>
             </div>
-        </div>
-    <hr />
+             <hr />
             {% if user.is_authenticated %}
               Hola {{ user.username }}!
               <p><a class="btn btn-block btn-danger"  href="{% url 'logout' %}"><i class="fad fa-user"></i> Cerrar Sesión</a></p>
@@ -34,6 +33,7 @@
               <p>Usuario Anónimo</p>
               <a class="btn btn-block btn-info" href="{% url 'login' %}"><i class="fad fa-user"></i> Iniciar Sesión</a>
             {% endif %}
+        </div>
         <div class="col-lg-9 order-1 order-lg-2">
             <table class="table table-bordered table-hover">
                 <thead>
