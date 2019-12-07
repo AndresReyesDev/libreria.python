@@ -1,3 +1,6 @@
+from django.urls import path
+from . import views
+
 from django.conf.urls import url
 # Books
 from .views import BookList, BookCreate, BookDetail, BookDelete, BookUpdate
@@ -9,6 +12,8 @@ from .views import GenreList, GenreCreate, GenreDetail, GenreDelete, GenreUpdate
 from .views import AuthorList, AuthorCreate, AuthorDetail, AuthorDelete, AuthorUpdate
 # Reservations
 from .views import ReservationList, ReservationCreate, ReservationDetail, ReservationDelete, ReservationUpdate
+# Auth
+from .views import redirect_view
 
 urlpatterns = [
 

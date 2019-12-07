@@ -3,6 +3,9 @@ from django.views.generic import CreateView, ListView, DetailView, DeleteView, U
 from .models import Book, Genre, Language, Author, BookInstance
 from django.urls import reverse_lazy
 from .forms import BookForm, AuthorForm, GenreForm, LanguageForm, ReservationForm
+# Auth
+from django.contrib.auth.forms import UserCreationForm
+from django.views import generic
 
 
 # Books
@@ -159,3 +162,15 @@ class ReservationUpdate(UpdateView):
     form_class = ReservationForm
     template_name = 'reservations/reservations_form.html'
     success_url = reverse_lazy('catalog:reservations_list')
+
+
+# Auth
+class SignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'signup.html'
+
+
+def redirect_view(request):
+    response = redirect('/')
+    return response
